@@ -1,0 +1,22 @@
+{
+    "configurations": [
+        {
+            "name": "Win32", // Keep this name, or change it to something descriptive
+            "includePath": [
+                "${workspaceFolder}/**",
+                "C:/SFML-2.6.1/include",
+                "C:/Users/SkySl/OneDrive/Documents/tic-tac-toe/include"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "compilerPath": "C:/mingw32/bin/g++.exe", // Update to your MinGW g++.exe path
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "gcc-x86" // Use gcc-x64 if you have 64-bit
+        }
+    ],
+    "version": 4
+}
