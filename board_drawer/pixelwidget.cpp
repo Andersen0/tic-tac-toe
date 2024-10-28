@@ -4,8 +4,8 @@
 
 // Constructor initializes the pixel state and appearance
 PixelWidget::PixelWidget(QWidget* parent)
-    : QPushButton(parent), toggled(false), isHovered(false) {
-    setFixedSize(40, 40);  // Set a fixed size for each cell
+    : QPushButton(parent), toggled(false), isHovered(false), isMousePressed(false) {
+    setFixedSize(40, 40); // Dynamic pixel sizes
     setStyleSheet("background-color: gray; border: 1px solid black;");
     setFocusPolicy(Qt::NoFocus);  // Ensure the button doesn't steal focus
 }
@@ -19,23 +19,29 @@ void PixelWidget::toggle() {
     setToggled(!toggled);
 }
 
-// Handle mouse press events
 void PixelWidget::mousePressEvent(QMouseEvent* event) {
     if (event->button() == Qt::LeftButton) {
-            setToggled(true);
-            emit toggledStateChanged();
-        } else if (event->button() == Qt::RightButton) {
-            // If right button pressed, toggle to off
-            setToggled(false);
-            emit toggledStateChanged();
-        }
+        isMousePressed = true;
+        setToggled(true);  // Turn on when clicking
+    }
 }
 
-// Update the visual style of the pixel based on its state
+void PixelWidget::mouseMoveEvent(QMouseEvent* event) {
+    if (isMousePressed && (event->buttons() & Qt::LeftButton)) {
+        setToggled(true);  // Turn on while dragging
+    }
+}
+
 void PixelWidget::updateStyle() {
     if (toggled) {
         setStyleSheet("background-color: white; border: 1px solid black;"); // On state
     } else {
         setStyleSheet("background-color: gray; border: 1px solid black;"); // Off state
+    }
+}
+
+void PixelWidget::mouseReleaseEvent(QMouseEvent* event) {
+    if (event->button() == Qt::LeftButton) {
+        isMousePressed = false;
     }
 }

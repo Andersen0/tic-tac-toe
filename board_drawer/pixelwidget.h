@@ -2,7 +2,6 @@
 #define PIXELWIDGET_H
 
 #include <QPushButton>
-#include <QEnterEvent>
 #include <QMouseEvent>
 
 class PixelWidget : public QPushButton {
@@ -17,10 +16,13 @@ public:
 
 protected:
     void mousePressEvent(QMouseEvent* event) override; // Handle mouse press events
+    void mouseMoveEvent(QMouseEvent* event) override;  // Handle mouse move events
+    
 
 private:
     bool toggled; // State of the pixel (on or off)
     bool isHovered; // Track if this pixel is currently hovered
+    bool isMousePressed; // Track if left mouse button is pressed
     void updateStyle(); // Update the visual style based on the state
 
 signals:

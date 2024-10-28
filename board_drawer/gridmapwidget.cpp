@@ -12,9 +12,7 @@ GridMapWidget::GridMapWidget(QWidget* parent)
             PixelWidget* pixel = new PixelWidget(this);
             gridLayout->addWidget(pixel, row, col);
 
-            // Connect toggle state signal if needed
             connect(pixel, &PixelWidget::toggledStateChanged, this, []() {
-                // Handle any state change logic here if needed
             });
         }
     }
