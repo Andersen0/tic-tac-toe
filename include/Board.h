@@ -9,13 +9,6 @@ class Board {
 private:
     int numRows;
     int numCols;
-    std::vector<std::vector<std::string>> symbolBoard;
-
-    void resetBoard();
-
-public:
-    std::vector<int> rowSums{numRows};
-    std::vector<int> columnSums{numCols};
 
     Board(int rows = 3, int cols = 3)
         : numRows(rows), numCols(cols)
