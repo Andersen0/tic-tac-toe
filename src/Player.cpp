@@ -1,14 +1,14 @@
 #include <iostream>
 #include <string>
-#include "../include/Board.h"
-#include "../include/Player.h"
+#include "../include/Board.hpp"
+#include "../include/Player.hpp"
 
 void Player::makeMove() {
     std::string input;
 
     while (true) {
 
-        std::cout << "Make a move, " << Name << ":" << std::endl;
+        std::cout << "Make a move, " << playerName << ":" << std::endl;
 
         std::getline(std::cin, input);
 

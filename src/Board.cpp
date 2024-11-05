@@ -4,7 +4,11 @@
 #include <random>
 #include <locale>
 
-#include "../include/Board.h"
+#include "../include/Board.hpp"
+
+std::string Board::emptySquare = "⛶";
+std::string Board::player1Mark = "✖";
+std::string Board::player2Mark = "◍";
 
 void Board::resetBoard() {
     for (int i = 0; i < numRows; ++i) {
@@ -49,21 +53,4 @@ void Board::displayBoard() {
     }
     std::cout << std::endl;
 
-}
-
-int main() {
-
-    Board board;
-
-    board.generateRandomBoard();
-
-    board.displayBoard();
-
-    //board.displaySymbolBoard();
-
-    //board.calculateRowColDiagSums();
-
-    //board.displayRowColDiagSums();
-
-    return 0;
 }

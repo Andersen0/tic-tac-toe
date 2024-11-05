@@ -1,7 +1,7 @@
 {
     "configurations": [
         {
-            "name": "Win32", // Keep this name, or change it to something descriptive
+            "name": "Win32",
             "includePath": [
                 "${workspaceFolder}/**",
                 "C:/SFML-2.6.1/include",
@@ -12,10 +12,10 @@
                 "UNICODE",
                 "_UNICODE"
             ],
-            "compilerPath": "C:/mingw32/bin/g++.exe", // Update to your MinGW g++.exe path
+            "compilerPath": "C:/mingw32/bin/g++.exe",
             "cStandard": "c17",
             "cppStandard": "c++17",
-            "intelliSenseMode": "gcc-x86" // Use gcc-x64 if you have 64-bit
+            "intelliSenseMode": "gcc-x86"
         }
     ],
     "version": 4

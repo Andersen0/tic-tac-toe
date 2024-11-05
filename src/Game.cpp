@@ -1,6 +1,6 @@
 #include <iostream>
-#include "../include/Game.h"
-#include "../include/Board.h"
+#include "../include/Game.hpp"
+#include "../include/Board.hpp"
 
 char player1, player2;
 
@@ -18,8 +18,8 @@ void Game::startGame() {
 }
 
 bool Game::checkWin() {
-    
-    
+    // TODO: Implement win checking logic
+    return false;
 }
 
 void Game::endInDraw() {
